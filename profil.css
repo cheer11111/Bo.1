@@ -1,0 +1,75 @@
+/* รีเซ็ตสั้นๆ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body { font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+
+/* ----- พื้นหลังลายเส้นตามภาพตัวอย่าง ----- */
+/* ชั้นที่ 1: ไล่เฉดชมพู-ส้มตรงกลางไปม่วงชมพูที่ขอบ */
+/* ชั้นที่ 2: เส้นดำแนวนอนซ้ำ ๆ ทับด้านบน */
+.stripe-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  /* ไล่เฉดด้านล่าง */
+  background-image:
+    /* เส้นดำซ้ำ */
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0,0,0,0) 0px,
+      rgba(0,0,0,0) 26px,   /* ความสูงแถบสี */
+      #0c24fd 26px,
+      #43cffa 40px             /* ความสูงแถบดำ */
+    ),
+    /* ไล่เฉดสีชมพู-ส้ม-ชมพู (แกนซ้าย-ขวา) */
+    linear-gradient(90deg, #e22c9c 0%, #dd1e44 50%, #b92c83 100%);
+  filter: saturate(105%);
+}
+
+/* จัดวางเนื้อหาให้อยู่กลาง */
+.wrap {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 6rem 1rem 4rem;
+  gap: 2rem;
+  text-align: center;
+}
+
+h1 {
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,.35);
+  letter-spacing: .5px;
+  font-weight: 700;
+}
+
+/* แกลเลอรี่ 4 รูป */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, min(38vw, 320px));
+  gap: 18px;
+}
+
+figure {
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(112, 17, 17, 0.06);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform .25s ease, filter .25s ease;
+}
+
+figure:hover img { transform: scale(1.04); filter: contrast(1.05); }
+
+/* รองรับจอใหญ่ให้รูปไม่เกินความกว้างนี้ */
+@media (min-width: 960px) {
+  .grid { grid-template-columns: repeat(2, 320px); }
+}

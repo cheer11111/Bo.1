@@ -1,0 +1,96 @@
+:root {
+    --bg-start: #ff5ca8;
+    --bg-mid:   #ff6260;
+    --bg-end:   #ff66c4;
+  
+    --card-pink:   #ff7eb0;
+    --card-peach:  #e47e3a;
+    --card-yellow: #ffd86a;
+  
+    --text: #131313;
+    --menu-size: clamp(28px, 6vw, 72px);
+    --pad: clamp(14px, 2vw, 24px);
+    --radius-lg: 10px;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    font-family: "Playfair Display", serif;
+    color: var(--text);
+    background:
+      linear-gradient(90deg, rgba(219, 11, 11, 0.08), rgba(255,255,255,0.08)) padding-box,
+      linear-gradient(90deg, var(--bg-start) 0%, var(--bg-mid) 50%, var(--bg-end) 100%) border-box;
+    background-attachment: fixed;
+  }
+  
+  .frame {
+    max-width: 1220px;
+    margin: clamp(16px,3vw,28px) auto;
+    padding: clamp(10px,1.4vw,16px);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--card-pink) 0%, var(--card-peach) 50%, var(--card-yellow) 100%);
+    min-height: 78vh;
+    position: relative;
+  }
+  
+  .menu {
+    display: flex;
+    gap: clamp(24px, 7vw, 120px);
+    align-items: flex-start;
+    padding: clamp(6px,1.2vw,10px) clamp(8px,2vw,18px);
+    user-select: none;
+  }
+  
+  .menu a {
+    font-size: var(--menu-size);
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text);
+    letter-spacing: 0.5px;
+    transition: transform .12s ease, opacity .12s ease;
+  }
+  
+  .menu a:hover {
+    transform: translateY(-2px);
+    opacity: .8;
+  }
+  
+  .content {
+    display: flex;
+    gap: clamp(18px, 3vw, 28px);
+    padding: clamp(8px, 1.8vw, 18px);
+  }
+  
+  .profile-pic {
+    width: clamp(220px, 26vw, 280px);
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 4px;
+    background: #ff0000;
+    box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    border: 10px solid rgba(255,255,255,.25);
+  }
+  
+  .right-blank {
+    flex: 1;
+    min-height: 420px;
+  }
+  
+  section {
+    scroll-margin-top: 80px;
+  }
+  
+  @media (max-width: 720px) {
+    .menu {
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+  }

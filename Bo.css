@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgb(230, 10, 10) 0px,
+      rgb(236, 211, 211) 20px,
+      #a514e9 20px,
+      #4242ff 40px
+    );
+    font-family: sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* วงกลมด้านบนซ้าย */
+  .circle-top-left {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #ffb10a, #ff00aa);
+    border-radius: 50%;
+    box-shadow: 0 0 20px #ff00bf, 0 0 40px #ff0800;
+  }
+  
+  /* กิ่งไม้ */
+  .branch {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    transform: rotate(20deg);
+  }
+  
+ 
+  
+  .flower {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: 2px solid #ff00aa;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff66cc;
+  }
